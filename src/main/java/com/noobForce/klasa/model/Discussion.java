@@ -56,6 +56,7 @@ public class Discussion {
         this.student = student;
     }
 
+
     @Override
     public String toString() {
         return "Discussion{" +
