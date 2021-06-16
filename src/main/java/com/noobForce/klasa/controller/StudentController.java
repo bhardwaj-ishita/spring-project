@@ -30,10 +30,16 @@ public class StudentController
         return new ResponseEntity<>(studentService.addStudent(student), HttpStatus.CREATED);
     }
     
-    @GetMapping("/hasAccount/{email}/{password}")
+    @GetMapping("/checkCredentials/{email}/{password}")
     public ResponseEntity<Boolean> hasAccount(@PathVariable String email, @PathVariable String password)
     {
-        return new ResponseEntity<>(studentService.hasAccount(email, password), HttpStatus.OK);
+        return new ResponseEntity<>(studentService.checkCredentials(email, password), HttpStatus.OK);
+    }
+    
+    @GetMapping("isRegistered/{email}")
+    public ResponseEntity<Boolean> isRegistered(@PathVariable String email)
+    {
+        return new ResponseEntity<>(studentService.isRegistered(email), HttpStatus.OK);
     }
     
     @PutMapping("/signin/{email}/{password}")
