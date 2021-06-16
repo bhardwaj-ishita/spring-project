@@ -13,7 +13,6 @@ public class Student implements Serializable
     private long id;
     private String firstName;
     private String lastName;
-    private String username;
     private String email;
     private String password;
     private boolean isLoggedIn;
@@ -46,16 +45,6 @@ public class Student implements Serializable
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
-    }
-    
-    public String getUsername()
-    {
-        return username;
-    }
-    
-    public void setUsername(String username)
-    {
-        this.username = username;
     }
     
     public String getEmail()
@@ -95,7 +84,6 @@ public class Student implements Serializable
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", isLoggedIn=" + isLoggedIn +
