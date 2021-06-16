@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, Long>
 {
+    // or is it findStudentByEmailAndPassword??
     List<Student> findByEmailAndPassword(String email, String password);
+    
+    List<Student> findByEmail(String email);
 }

@@ -20,7 +20,11 @@ public class StudentService
     
     public Student addStudent(Student student)
     {
-        // setUUID?
+        // =============================================**README**===================================================
+        // will have to send an additional parameter of loggedIn in the js file (as true or else set it true here).
+        // first check in the js weather an account exists with that email (might have to create a controller)
+        // if not, create a new account
+        student.setLoggedIn(true);
         return studentRepository.save(student);
     }
     
@@ -52,11 +56,17 @@ public class StudentService
         return updateStudent(student);
     }
     
-    public Boolean hasAccount(String email, String password)
+    public Boolean checkCredentials(String email, String password)
     {
         List<Student> studentAccount = studentRepository.findByEmailAndPassword(email, password);
         return studentAccount.size() > 0;
     }
-
+    
+    
+    public Boolean isRegistered(String email)
+    {
+        List<Student> studentAccount = studentRepository.findByEmail(email);
+        return studentAccount.size() > 0;
+    }
 }
 
