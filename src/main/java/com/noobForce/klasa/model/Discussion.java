@@ -47,7 +47,7 @@ public class Discussion {
     }
 
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "username", nullable = false)
     public Student getStudent() {
         return student;
     }
