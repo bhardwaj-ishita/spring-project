@@ -47,7 +47,7 @@ public class Discussion {
     }
 
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "username", nullable = false)
     public Student getStudent() {
         return student;
     }
@@ -55,7 +55,6 @@ public class Discussion {
     public void setStudent(Student student) {
         this.student = student;
     }
-
 
     @Override
     public String toString() {
