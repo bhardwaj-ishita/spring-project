@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -33,5 +34,11 @@ public class AnnouncementController
     public ResponseEntity<List<Announcement>> getAllAnnouncements()
     {
         return new ResponseEntity<>(announcementService.getAllAnnouncements(), HttpStatus.OK);
+    }
+    
+    @GetMapping("/getAllByDate")
+    public ResponseEntity<List<Announcement>> getAllAnnouncementsByDate(@RequestBody LocalDate date)
+    {
+        return new ResponseEntity<>(announcementService.getAllAnnouncementsByDate(date), HttpStatus.OK);
     }
 }
