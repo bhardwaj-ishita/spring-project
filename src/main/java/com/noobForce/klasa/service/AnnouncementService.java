@@ -6,6 +6,7 @@ import com.noobForce.klasa.repository.AnnouncementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,5 +28,10 @@ public class AnnouncementService
     public List<Announcement> getAllAnnouncements()
     {
         return announcementRepository.findAll();
+    }
+    
+    public List<Announcement> getAllAnnouncementsByDate(LocalDate date)
+    {
+        return announcementRepository.findByDate(date);
     }
 }

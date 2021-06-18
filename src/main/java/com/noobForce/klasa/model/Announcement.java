@@ -94,6 +94,4 @@ public class Announcement implements Serializable
         return time;
     }
 
-    
-    
 }
