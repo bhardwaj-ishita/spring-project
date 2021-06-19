@@ -27,6 +27,7 @@ public class AnnouncementController
     public ResponseEntity<Announcement> addAnnouncement(@RequestBody Announcement announcement)
     {
         return new ResponseEntity<>(announcementService.addAnnouncement(announcement), HttpStatus.CREATED);
+        
     }
     
     @GetMapping("/getAll")

@@ -21,17 +21,11 @@ public class Announcement implements Serializable
 
 
 
-    public Announcement()
-    {
-        this.date = LocalDate.now();
-        this.time = LocalTime.now();
-    }
-
-    public Announcement(String announcement) {
-        this.date = LocalDate.now();
-        this.time = LocalTime.now();
-        this.announcement = announcement;
-    }
+//    public Announcement()
+//    {
+//        this.date = LocalDate.now();
+//        this.time = LocalTime.now();
+//    }
     
     public long getId()
     {
@@ -65,12 +59,16 @@ public class Announcement implements Serializable
     
     public LocalDate getDate()
     {
-        return this.date = LocalDate.now();
+        return date;
     }
-
-    public LocalTime getTime()
+    
+    @Override
+    public boolean equals(Object o)
     {
-        return this.time = LocalTime.now();
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Announcement that = (Announcement) o;
+        return id == that.id && nameOfProfessor.equals(that.nameOfProfessor) && announcement.equals(that.announcement) && date.equals(that.date) && time.equals(that.time);
     }
     
     @Override
@@ -84,4 +82,16 @@ public class Announcement implements Serializable
                 ", time=" + time +
                 '}';
     }
+    
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(id, nameOfProfessor, announcement, date, time);
+    }
+    
+    public LocalTime getTime()
+    {
+        return time;
+    }
+
 }
