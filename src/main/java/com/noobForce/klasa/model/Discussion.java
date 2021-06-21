@@ -11,6 +11,10 @@ import java.time.LocalTime;
 @Entity
 public class Discussion implements Serializable {
 
+    /*
+    student field is removed
+    Have to call the student name from student database who is currently loggedIn == true
+     */
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long id;

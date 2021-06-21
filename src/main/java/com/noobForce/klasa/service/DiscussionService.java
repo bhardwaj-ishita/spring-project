@@ -28,7 +28,6 @@ public class DiscussionService {
     }
 
     public Discussion addDiscussion(Discussion discussion) {
-        log.info("I'm here too");
         return discussionRepository.save(discussion);
     }
 }
