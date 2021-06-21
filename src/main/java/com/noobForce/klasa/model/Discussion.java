@@ -1,29 +1,25 @@
 package com.noobForce.klasa.model;
 
+import org.hibernate.type.LocalDateType;
+import org.hibernate.type.LocalTimeType;
+
 import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
-public class Discussion implements Serializable {
+@Table (name = "discussions", schema = "classroom")
+public class Discussion {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
-    private long id;
-    private LocalDate date;
-    private LocalTime time;
+    private @Id @GeneratedValue long id;
+    private final LocalDateType date = new LocalDateType();
+    private final LocalTimeType time = new LocalTimeType();
     private String input;
+    private Student student;
 
     public Discussion() {
-        this.date = LocalDate.now();
-        this.time = LocalTime.now();
     }
 
     public Discussion(String input) {
         this.input = input;
-        this.date = LocalDate.now();
-        this.time = LocalTime.now();
     }
 
     public long getId() {
@@ -34,12 +30,12 @@ public class Discussion implements Serializable {
         this.id = id;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = LocalDate.now();
+    public LocalDateType getDate() {
+        return date;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = LocalTime.now();
+    public LocalTimeType getTime() {
+        return time;
     }
 
     public String getInput() {
@@ -50,6 +46,16 @@ public class Discussion implements Serializable {
         this.input = input;
     }
 
+    @OneToOne
+    @JoinColumn(name = "username", nullable = false)
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     @Override
     public String toString() {
         return "Discussion{" +
@@ -57,6 +63,7 @@ public class Discussion implements Serializable {
                 ", date=" + date +
                 ", time=" + time +
                 ", input='" + input + '\'' +
+                ", student=" + student +
                 '}';
     }
 }
