@@ -12,7 +12,7 @@ import java.time.LocalTime;
 public class Discussion implements Serializable {
 
     /*
-    student field is removed
+    Student field is removed
     Have to call the student name from student database who is currently loggedIn == true
      */
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
