@@ -42,9 +42,10 @@ public class StudentController
         return new ResponseEntity<>(studentService.isRegistered(email), HttpStatus.OK);
     }
     
-    @PutMapping("/signin/{email}/{password}")
+    @GetMapping("/signin/{email}/{password}")
     public ResponseEntity<Student> signInStudent(@PathVariable String email, @PathVariable String password)
     {
+        System.out.println("request reached");
         return new ResponseEntity<>(studentService.signInStudent(email, password), HttpStatus.OK);
     }
     
