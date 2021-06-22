@@ -36,8 +36,8 @@ public class AnnouncementController
         return new ResponseEntity<>(announcementService.getAllAnnouncements(), HttpStatus.OK);
     }
     
-    @GetMapping("/getAllByDate")
-    public ResponseEntity<List<Announcement>> getAllAnnouncementsByDate(@RequestBody LocalDate date)
+    @GetMapping("/getAllByDate/{date}")
+    public ResponseEntity<List<Announcement>> getAllAnnouncementsByDate(@PathVariable int date)
     {
         return new ResponseEntity<>(announcementService.getAllAnnouncementsByDate(date), HttpStatus.OK);
     }
