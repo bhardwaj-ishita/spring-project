@@ -1,8 +1,5 @@
 package com.noobForce.klasa.model;
 
-import org.hibernate.type.LocalDateType;
-import org.hibernate.type.LocalTimeType;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;

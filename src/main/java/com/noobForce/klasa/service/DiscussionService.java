@@ -22,6 +22,8 @@ public class DiscussionService {
         return discussionRepository.findAll();
     }
 
+    public List<Discussion> getByKeyword(String keyword) {return discussionRepository.findByKeyword(keyword);}
+
     public List<Discussion> getByDate(int date)
     {
         return discussionRepository.findByDate(LocalDate.of(2021, 6,date));
