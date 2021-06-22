@@ -30,8 +30,8 @@ public class AnnouncementService
         return announcementRepository.findAll();
     }
     
-    public List<Announcement> getAllAnnouncementsByDate(LocalDate date)
+    public List<Announcement> getAllAnnouncementsByDate(int date)
     {
-        return announcementRepository.findByDate(date);
+        return announcementRepository.findByDate(LocalDate.of(2021, 06, date));
     }
 }
