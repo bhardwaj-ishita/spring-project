@@ -10,8 +10,7 @@ public class Student implements Serializable
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String email;
     private String password;
     private boolean isLoggedIn;
@@ -26,25 +25,16 @@ public class Student implements Serializable
         this.id = id;
     }
     
-    public String getFirstName()
+    public String getFullName()
     {
-        return firstName;
+        return fullName;
     }
     
-    public void setFirstName(String firstName)
+    public void setFullName(String fullName)
     {
-        this.firstName = firstName;
+        this.fullName = fullName;
     }
     
-    public String getLastName()
-    {
-        return lastName;
-    }
-    
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
-    }
     
     public String getEmail()
     {
@@ -81,8 +71,7 @@ public class Student implements Serializable
     {
         return "Student{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", isLoggedIn=" + isLoggedIn +

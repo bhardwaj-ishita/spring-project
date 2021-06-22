@@ -44,7 +44,13 @@ public class StudentService
     public Student signInStudent(String email, String password)
     {
         Student student = studentRepository.findByEmailAndPassword(email, password).get(0);
+        
+        //debug
+        student.setLoggedIn(false);
+        System.out.println(student);
         student.setLoggedIn(true);
+        System.out.println(student);
+        
         return updateStudent(student);
     }
     
