@@ -11,4 +11,6 @@ public interface StudentRepository extends JpaRepository<Student, Long>
     List<Student> findByEmailAndPassword(String email, String password);
     
     List<Student> findByEmail(String email);
+    
+    List<Student> findStudentByIsLoggedIn(boolean b);
 }
