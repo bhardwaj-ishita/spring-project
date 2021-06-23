@@ -74,5 +74,10 @@ public class StudentService
         List<Student> studentAccount = studentRepository.findByEmail(email);
         return studentAccount.size() > 0;
     }
+    
+    public Student findLoggedInStudent()
+    {
+        return studentRepository.findStudentByIsLoggedIn(true).get(0);
+    }
 }
 
