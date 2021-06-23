@@ -1,4 +1,8 @@
 //GET THE STUDENT THAT IS CURRENTLY LOGGED IN
+/*
+getLoggedIn not able to send the output to loadMessages
+Need to figure out why request is not finished yet
+ */
 function getLoggedInStudent(){
     return new Promise( function (resolve, reject) {
         var xrh = new XMLHttpRequest();
