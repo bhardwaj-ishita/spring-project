@@ -1,5 +1,7 @@
 package com.noobForce.klasa.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -15,8 +17,10 @@ public class Discussion implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long id;
-    private LocalDate date;
-    private LocalTime time;
+
+    private @JsonFormat(pattern="dd-MM-YY") LocalDate date;
+
+    private @JsonFormat(pattern="HH:mm") LocalTime time;
     private String input;
 
     public Discussion() {
@@ -42,9 +46,13 @@ public class Discussion implements Serializable {
         this.date = LocalDate.now();
     }
 
+    public LocalDate getDate() {return date;}
+
     public void setTime(LocalTime time) {
         this.time = LocalTime.now();
     }
+
+    public LocalTime getTime() {return time;}
 
     public String getInput() {
         return input;
