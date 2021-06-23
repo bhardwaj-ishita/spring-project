@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,8 +38,8 @@ public class ResourceController
 	        return new ResponseEntity<>(resourceService.getAllResources(), HttpStatus.OK);
 	    }
 	    
-	    @GetMapping("/getAllByDate")
-	    public ResponseEntity<List<Resource>> getAllResourcesByDate(@RequestBody LocalDate date)
+	    @GetMapping("/getAllByDate/{date}")
+	    public ResponseEntity<List<Resource>> getAllResourcesByDate(@PathVariable int date)
 	    {
 	        return new ResponseEntity<>(resourceService.getAllResourcesByDate(date), HttpStatus.OK);
 	    }

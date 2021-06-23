@@ -31,9 +31,9 @@ public class ResourceService
         return resourceRepository.findAll();
     }
     
-    public List<Resource> getAllResourcesByDate(LocalDate date)
+    public List<Resource> getAllResourcesByDate(int date)
     {
-        return resourceRepository.findByDate(date);
+        return resourceRepository.findByDate(LocalDate.of(2021, 06, date));
     }
 	
 }

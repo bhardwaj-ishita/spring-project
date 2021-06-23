@@ -17,11 +17,11 @@ public class Resource implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long id;
+    private int SNo;
     private String nameOfProfessor;
     private String resource;
     private LocalDate date;
     private LocalTime time;
-    
     public Resource() {}
 
 	public long getId() {
@@ -63,12 +63,21 @@ public class Resource implements Serializable {
 	public void setTime(LocalTime time) {
 		this.time = time;
 	}
+	
+	public int getSNo() {
+		return SNo;
+	}
+
+	public void setSNo(int sNo) {
+		SNo = sNo;
+	}
 
 	@Override
 	public String toString() {
-		return "Resource [id=" + id + ", nameOfProfessor=" + nameOfProfessor + ", resource=" + resource + ", date="
-				+ date + ", time=" + time + "]";
+		return "Resource [id=" + id + ", SNo=" + SNo + ", nameOfProfessor=" + nameOfProfessor + ", resource=" + resource
+				+ ", date=" + date + ", time=" + time + "]";
 	}
+
 
 	
     
