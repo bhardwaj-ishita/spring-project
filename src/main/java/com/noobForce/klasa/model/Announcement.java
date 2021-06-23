@@ -18,14 +18,20 @@ public class Announcement implements Serializable
     private String announcement;
     private LocalDate date;
     private LocalTime time;
-
-
-
-//    public Announcement()
-//    {
-//        this.date = LocalDate.now();
-//        this.time = LocalTime.now();
-//    }
+    
+    public Announcement(String nameOfProfessor, String announcement, LocalDate date, LocalTime time)
+    {
+//        this.id = id;
+        this.nameOfProfessor = nameOfProfessor;
+        this.announcement = announcement;
+        this.date = date;
+        this.time = time;
+    }
+    
+    public Announcement()
+    {
+    
+    }
     
     public long getId()
     {
