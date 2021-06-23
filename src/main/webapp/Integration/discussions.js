@@ -66,6 +66,7 @@ function loadMessages() {
                         '                            </div>'
                 }
 
+
                 document.getElementById('message-to-send').innerHTML = output;
             }
         }
