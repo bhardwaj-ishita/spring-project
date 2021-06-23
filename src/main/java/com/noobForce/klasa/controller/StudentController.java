@@ -54,4 +54,10 @@ public class StudentController
     {
         return new ResponseEntity<>(studentService.signOutStudent(email, password), HttpStatus.OK);
     }
+    
+    @GetMapping("findLoggedIn")
+    public ResponseEntity<Student> findLoggedInStudent()
+    {
+        return new ResponseEntity<>(studentService.findLoggedInStudent(), HttpStatus.OK);
+    }
 }
