@@ -1,5 +1,6 @@
 package com.noobForce.klasa.service;
 
+import com.noobForce.klasa.model.Discussion;
 import com.noobForce.klasa.model.Student;
 import com.noobForce.klasa.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,10 +75,14 @@ public class StudentService
         List<Student> studentAccount = studentRepository.findByEmail(email);
         return studentAccount.size() > 0;
     }
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
     
-    public Student findLoggedInStudent()
+    /*public Student findLoggedInStudent()
     {
         return studentRepository.findStudentByIsLoggedIn(true).get(0);
-    }
+    }*/
 }
 

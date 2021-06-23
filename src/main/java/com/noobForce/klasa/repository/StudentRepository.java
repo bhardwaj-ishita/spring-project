@@ -12,5 +12,5 @@ public interface StudentRepository extends JpaRepository<Student, Long>
     
     List<Student> findByEmail(String email);
     
-    List<Student> findStudentByIsLoggedIn(boolean b);
+    /*List<Student> findStudentByIsLoggedIn(boolean b);*/
 }

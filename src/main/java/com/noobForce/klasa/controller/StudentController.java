@@ -1,11 +1,14 @@
 package com.noobForce.klasa.controller;
 
 
+import com.noobForce.klasa.model.Discussion;
 import com.noobForce.klasa.model.Student;
 import com.noobForce.klasa.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
@@ -54,10 +57,15 @@ public class StudentController
     {
         return new ResponseEntity<>(studentService.signOutStudent(email, password), HttpStatus.OK);
     }
+
+    @GetMapping("/getAllStudents")
+    public List<Student> showDiscussion() {
+        return studentService.getAllStudents();
+    }
     
-    @GetMapping("findLoggedIn")
+    /*@GetMapping("findLoggedIn")
     public ResponseEntity<Student> findLoggedInStudent()
     {
         return new ResponseEntity<>(studentService.findLoggedInStudent(), HttpStatus.OK);
-    }
+    }*/
 }
