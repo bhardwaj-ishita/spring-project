@@ -121,9 +121,9 @@
                         <div>
                             <div>
                                 <section style="color: rgb(113,113,113);background-color: #ffffff;padding: 30px;">
-                                    <div class="container scstyle-4 sc-overflow">
+                                    <div class="container scstyle-4 sc-overflow" onload="scrollDown()">
                                         <article>
-                                            <div class="row">
+                                            <div class="row" id="message-to-send">
                                                 <div class="col">
                                                     <ul class="list-group">
                                                         <li class="list-group-item" style="margin: 5px 5px 0px 5px;">
@@ -166,14 +166,19 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <!--<div class="row">
                                                 <div class="col" style="margin: 5px;">
-                                                    <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send"><button class="btn btn-primary" type="button">Send</button></div>
+                                                    <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                         </article>
                                     </div>
                                 </section>
+                                <div class="row">
+                                    <div class="col" style="margin: 5px;">
+                                        <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -35,22 +35,22 @@ function loadMessages() {
                 const members = JSON.parse(this.responseText);
 
                 let output = '';
-                for(const i in members) {
+                for(let i = members.length - 1; i >= 0; i--) {
                     output +=
-                        '<div class="row">\n' +
+                        '<div class="row" onload="scrollDown()">\n' +
                         '<div class="col">\n' +
                         '<ul class="list-group">\n' +
                         '<li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
                         '<div class="d-flex media">\n' +
-                        '<div class="media-body" class="">\n' +
+                        '<div></div>\n' +
+                        '<div class="media-body">\n' +
                         '<div class="d-flex media" style="overflow:visible;">\n' +
                         '<div></div>\n' +
                         '<div style="overflow:visible;" class="media-body">\n' +
                         '<div class="row" style="width: 787px;">\n' +
                         '<div class="col-10" style="width: 650px;">\n' +
-                        '<h5></h5>\n' +
-                        '<label class="form-label" id="name-of-sender">' + nameOfSender + '</label>\n' +
-                        '<p style="width: 500px;" id="message-to-send">' + members[i].input + '<br>\n' +
+                        '<h5></h5><label class="form-label">Priyasha</label>\n' +
+                        '<p style="width: 500px;">I agree<br>\n' +
                         '<small class="text-muted">' + members[i].date + ' at ' +  members[i].time + '</small></p>\n' +
                         '</div>\n' +
                         '</div>\n' +
@@ -58,7 +58,25 @@ function loadMessages() {
                         '</div>\n' +
                         '</div>\n' +
                         '</div>\n' +
-                        '</li>' +
+                        '</li>\n' +
+                        '<li class="list-group-item" style="margin: 0px 5px;border-style: solid;"><label class="form-label">' + nameOfSender + '</label>\n' +
+                        '<div class="d-flex media">\n' +
+                        '<div></div>\n' +
+                        '<div class="media-body">\n' +
+                        '<div class="d-flex media" style="overflow:visible;">\n' +
+                        '<div></div>\n' +
+                        '<div style="overflow:visible;" class="media-body">\n' +
+                        '<div class="row">\n' +
+                        '<div class="col-md-12">\n' +
+                        '<p>' + members[i].input + '<br>\n' +
+                        '<small class="text-muted">' + members[i].date + ' at ' +  members[i].time + '</small></p>\n' +
+                        '</div>\n' +
+                        '</div>\n' +
+                        '</div>\n' +
+                        '</div>\n' +
+                        '</div>\n' +
+                        '</div>\n' +
+                        '</li>\n' +
                         '</ul>\n' +
                         '</div>\n' +
                         '</div>'
@@ -83,18 +101,21 @@ function addNewMessage() {
     let params = JSON.stringify({
         "input": input
     });
+    document.getElementById('send-message').value='';
     console.log(params);
     xrh.send(params);
     loadMessages();
 }
 
-/*/!*$(function(){
+/*
+$(function(){
     $('.mybox').scrollTop($(document).height());
-  });*!/
+  });
+*/
 
 
-  /!*$('.mybox').load(scrollDown);*!/
+/*$(mybox).load(scrollDown);*/
 
-  scrollDown = function() {
-    document.div.scrollTop = document.div.scrollHeight;
-  }*/
+ scrollDown = function() {
+     document.div.scrollTop = document.div.scrollHeight;
+ }
