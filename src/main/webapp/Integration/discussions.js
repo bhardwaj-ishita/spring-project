@@ -40,7 +40,7 @@ function loadMessages() {
                         '<div class="row" onload="scrollDown()">\n' +
                         '<div class="col">\n' +
                         '<ul class="list-group">\n' +
-                        '<li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
+                        /*'<li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
                         '<div class="d-flex media">\n' +
                         '<div></div>\n' +
                         '<div class="media-body">\n' +
@@ -58,7 +58,7 @@ function loadMessages() {
                         '</div>\n' +
                         '</div>\n' +
                         '</div>\n' +
-                        '</li>\n' +
+                        '</li>\n' +*/
                         '<li class="list-group-item" style="margin: 0px 5px;border-style: solid;"><label class="form-label">' + nameOfSender + '</label>\n' +
                         '<div class="d-flex media">\n' +
                         '<div></div>\n' +
