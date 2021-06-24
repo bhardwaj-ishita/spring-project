@@ -4,6 +4,8 @@ package com.noobForce.klasa.controller;
 import com.noobForce.klasa.model.Discussion;
 import com.noobForce.klasa.model.Student;
 import com.noobForce.klasa.service.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -59,7 +61,7 @@ public class StudentController
     }
 
     @GetMapping("/getAllStudents")
-    public List<Student> showDiscussion() {
+    public List<Student> showStudents() {
         return studentService.getAllStudents();
     }
     

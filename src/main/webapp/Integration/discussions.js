@@ -9,10 +9,10 @@ function getLoggedInStudent(){
         xrh.open('GET', '/student/getAllStudents', true);
         xrh.onload = function () {
             let output= '';
-            if(this.status === 200) {
+            if (this.status === 200) {
                 const members = JSON.parse(this.responseText);
-                for(const i in members) {
-                    if(members[i].isLoggedIn === true) {
+                for (const i in members) {
+                    if (members[i].loggedIn === true) {
                         output = members[i].fullName;
                         break;
                     }
@@ -25,12 +25,11 @@ function getLoggedInStudent(){
     });
 }
 
-
 //SHOW THE MESSAGE
 function loadMessages() {
     getLoggedInStudent().then(nameOfSender => {
         var xrh = new XMLHttpRequest();
-        xrh.open('GET', '/discussions/getAll', false);
+        xrh.open('GET', '/discussions/getAll', true);
         xrh.onload = function () {
             if (this.status === 200) {
                 const members = JSON.parse(this.responseText);
@@ -43,7 +42,6 @@ function loadMessages() {
                         '                                    <ul class="list-group">\n' +
                         '                                        <li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
                         '                                            <div class="d-flex media">\n' +
-                        '                                                <div></div>\n' +
                         '                                                <div class="media-body" class="">\n' +
                         '                                                    <div class="d-flex media" style="overflow:visible;">\n' +
                         '                                                        <div></div>\n' +
