@@ -65,6 +65,16 @@ public class Assignment implements Serializable {
 		return "Assignment [id=" + id + ", SNo=" + SNo + ", date=" + date + ", dueDate=" + dueDate + ", status="
 				+ status + ", title=" + title + "]";
 	}
+	public Assignment(int sNo, LocalDate date, LocalDate dueDate, boolean status, String title) {
+		super();
+		SNo = sNo;
+		this.date = date;
+		this.dueDate = dueDate;
+		this.status = status;
+		this.title = title;
+	}
+	
+	
 
 	
 }

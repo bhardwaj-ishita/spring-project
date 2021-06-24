@@ -18,6 +18,7 @@ public class Resource implements Serializable {
     @Column(nullable = false, updatable = false)
     private long id;
     private int SNo;
+    //nameOfProfessor=link
     private String nameOfProfessor;
     private String resource;
     private LocalDate date;
@@ -76,6 +77,15 @@ public class Resource implements Serializable {
 	public String toString() {
 		return "Resource [id=" + id + ", SNo=" + SNo + ", nameOfProfessor=" + nameOfProfessor + ", resource=" + resource
 				+ ", date=" + date + ", time=" + time + "]";
+	}
+
+	public Resource(int sNo, String nameOfProfessor, String resource, LocalDate date) {
+		super();
+		SNo = sNo;
+		this.nameOfProfessor = nameOfProfessor;
+		this.resource = resource;
+		this.date = date;
+		
 	}
 
 
