@@ -127,7 +127,15 @@
               </div>
             </nav>
 
-            <div class="row" id="message-to-send" onclick="">
+            <style>
+              .mybox{
+                height: 200px;
+                overflow-y: auto;
+              }
+
+            </style>
+            <div class="mybox" onload=scrollDown()>
+              <div class="row" id="message-to-send" onclick="">
               <div class="col">
                 <ul class="list-group">
                   <li class="list-group-item" style="margin: 5px 5px 0px 5px;">
@@ -169,10 +177,11 @@
                 </ul>
               </div>
             </div>
-            <div class="row">
+              <div class="row">
               <div class="col" style="margin: 5px;">
                 <div class="input-group"><input id="send-message" class="form-control" type="text" placeholder="Enter a message to send"><button id="sendInput" class="btn btn-primary" type="button">Send</button></div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -231,6 +240,12 @@
 <script src="assets/js/Bootstrap-Tags-Input.js"></script>
 <script src="assets/js/Ultimate-Event-Calendar.js"></script>
 <script src="Integration/discussions.js"></script>
+
+<script>
+
+
+
+</script>
 
 </body>
 
