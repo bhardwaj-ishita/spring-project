@@ -39,7 +39,7 @@ function loadMessages() {
                     output +=
                         '<div class="row" onload="scrollDown()">\n' +
                         '<div class="col">\n' +
-                        '<ul class="list-group">\n' +
+                        '<ul class="list-group" id="list-discussion">\n' +
                         /*'<li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
                         '<div class="d-flex media">\n' +
                         '<div></div>\n' +
@@ -59,7 +59,7 @@ function loadMessages() {
                         '</div>\n' +
                         '</div>\n' +
                         '</li>\n' +*/
-                        '<li class="list-group-item" style="margin: 0px 5px;border-style: solid;"><label class="form-label">' + nameOfSender + '</label>\n' +
+                        '<li class="list-group-item" style="margin: 0px 5px;border-style: solid;" id="the-messages"><a><label class="form-label">' + nameOfSender + '</label>\n' +
                         '<div class="d-flex media">\n' +
                         '<div></div>\n' +
                         '<div class="media-body">\n' +
@@ -76,7 +76,7 @@ function loadMessages() {
                         '</div>\n' +
                         '</div>\n' +
                         '</div>\n' +
-                        '</li>\n' +
+                        '</a></li>\n' +
                         '</ul>\n' +
                         '</div>\n' +
                         '</div>'
@@ -115,7 +115,37 @@ $(function(){
 
 
 /*$(mybox).load(scrollDown);*/
-
+//TRYING TO TARGET THE SCROLLER TO BOTTOM
  scrollDown = function() {
      document.div.scrollTop = document.div.scrollHeight;
+
+     /*
+$(function(){
+    $('.mybox').scrollTop($(document).height());
+  });
+*/
+
+
+     /*$(mybox).load(scrollDown);*/
  }
+
+
+ //SEARCH FILTER
+
+/*function searchList() {
+    let input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search-field");
+    console.log(input);
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("list-discussion");
+    li = ul.getElementsByTagName("the-messages");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}*/
