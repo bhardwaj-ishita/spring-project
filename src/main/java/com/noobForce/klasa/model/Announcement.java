@@ -17,7 +17,7 @@ public class Announcement implements Serializable
     private String nameOfProfessor;
 //    @Column(length = 10000000, columnDefinition = "TEXT")
 //    @Column(length = 100000000)
-    @Lob @Column(length = 100000)
+//    @Lob @Column(length = 100000)
     private String announcement;
     
     private LocalDate date;
