@@ -43,7 +43,7 @@ function loadDataOnTop(date) {
         timelogo.classList.add("fa-clock-o");
         timelogo.setAttribute("aria-hidden", "true");
 
-        let timedata = document.createTextNode(" 11:59 PM");
+        let timedata = document.createTextNode(" 11:59");
 
         let body = document.createElement("p");
         let due = document.createTextNode("Assignment due:");
