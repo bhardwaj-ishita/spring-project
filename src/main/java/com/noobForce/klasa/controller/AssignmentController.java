@@ -2,6 +2,7 @@ package com.noobForce.klasa.controller;
 
 import java.util.List;
 
+import com.noobForce.klasa.model.Announcement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,4 +42,10 @@ public class AssignmentController
         return new ResponseEntity<>(assignmentService.getAllAssignmentsByDate(dueDate), HttpStatus.OK);
     }
 
+    //for search feature
+    @GetMapping("/getAll/{keyword}")
+    public List<Assignment> getFilteredDiscussion(@PathVariable String keyword) {
+        if(keyword.isEmpty() || keyword.isBlank()) return assignmentService.getAllAssignments();
+        else return assignmentService.getByKeyword(keyword);
+    }
 }

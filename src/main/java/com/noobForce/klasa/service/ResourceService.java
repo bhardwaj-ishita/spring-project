@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Random;
 
+import com.noobForce.klasa.model.Assignment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -101,6 +102,8 @@ public class ResourceService
 
         return resourceRepository.findAll();
     }
-    
+
+    //for search filter
+    public List<Resource> getByKeyword(String keyword) {return resourceRepository.findByKeyword(keyword);}
 	
 }

@@ -2,6 +2,7 @@ package com.noobForce.klasa.controller;
 
 
 import com.noobForce.klasa.model.Announcement;
+import com.noobForce.klasa.model.Discussion;
 import com.noobForce.klasa.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,5 +40,12 @@ public class AnnouncementController
     public ResponseEntity<List<Announcement>> getAllAnnouncementsByDate(@PathVariable int date)
     {
         return new ResponseEntity<>(announcementService.getAllAnnouncementsByDate(date), HttpStatus.OK);
+    }
+
+    //for search feature
+    @GetMapping("/getAll/{keyword}")
+    public List<Announcement> getFilteredDiscussion(@PathVariable String keyword) {
+        if(keyword.isEmpty() || keyword.isBlank()) return announcementService.getAllAnnouncements();
+        else return announcementService.getByKeyword(keyword);
     }
 }

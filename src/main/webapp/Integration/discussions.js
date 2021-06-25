@@ -34,7 +34,7 @@ function loadMessages() {
                 let output = '';
                 for(let i = members.length - 1; i >= 0; i--) {
                     output +=
-                        '<div class="row" onload="scrollDown()">\n' +
+                        '<div class="row"">\n' +
                         '<div class="col">\n' +
                         '<ul class="list-group" id="list-discussion">\n' +
                         /*'<li class="list-group-item" style="margin: 5px 5px 0px 5px;">\n' +
@@ -86,6 +86,7 @@ function loadMessages() {
         xrh.send();
     });
 }
+
 
 
 //POSTING NEW MESSAGES TO DB
