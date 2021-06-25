@@ -1,6 +1,6 @@
 function loadAllAnnouncments() {
     let xrh = new XMLHttpRequest();
-    xrh.open('GET', '/announcement/getAll', false);
+    xrh.open('GET', '/announcement/getAllAnnounce', false);
     xrh.onload = function () {
         console.log("Status:");
         console.log(this.status);
