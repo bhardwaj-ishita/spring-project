@@ -3,6 +3,7 @@ package com.noobForce.klasa.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.noobForce.klasa.model.Discussion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -96,6 +97,7 @@ public class AssignmentService
     public void deleteAssignment() {
         assignmentRepository.deleteAll();
     }
-    
 
+    //for search filter
+    public List<Assignment> getByKeyword(String keyword) {return assignmentRepository.findByKeyword(keyword);}
 }

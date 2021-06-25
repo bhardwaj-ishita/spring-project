@@ -1,5 +1,6 @@
 package com.noobForce.klasa.controller;
 
+import com.noobForce.klasa.model.Assignment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,5 +51,12 @@ public class ResourceController
 	        return new ResponseEntity<>(resourceService.addResource(resource), HttpStatus.CREATED);
 	        
 	    }
+
+		//for search feature
+		@GetMapping("/getAll/{keyword}")
+		public List<Resource> getFilteredDiscussion(@PathVariable String keyword) {
+			if(keyword.isEmpty() || keyword.isBlank()) return resourceService.getAllResources();
+			else return resourceService.getByKeyword(keyword);
+		}
 	    
 }

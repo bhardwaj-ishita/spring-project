@@ -2,6 +2,7 @@ package com.noobForce.klasa.service;
 
 
 import com.noobForce.klasa.model.Announcement;
+import com.noobForce.klasa.model.Discussion;
 import com.noobForce.klasa.repository.AnnouncementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -161,4 +162,7 @@ public class AnnouncementService
         getAllAnnouncements();
         return announcementRepository.findByDate(LocalDate.of(2021, 06, date));
     }
+
+    //for search feature
+    public List<Announcement> getByKeyword(String keyword) {return announcementRepository.findByKeyword(keyword);}
 }

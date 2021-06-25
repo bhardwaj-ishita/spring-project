@@ -73,3 +73,69 @@ function loadAssignments() {
 }
 
 loadAssignments();
+
+
+
+
+//SEARCH FILTER
+document.getElementById('search-field').addEventListener('keyup', searchList);
+function searchList() {
+    let search = document.getElementById("search-field").value;
+    console.log(search);
+    let request = new XMLHttpRequest();
+    request.open('GET', '/getAll/' + search, false);
+
+    request.onload = function () {
+        console.log("STATUS");
+        console.log(this.status);
+        let data = JSON.parse(this.responseText);
+        let output = '';
+        for (const i in data) {
+
+            console.log(data[i]);
+
+            let sub = 'Not Submitted';
+            if (data[i].status === true)  {
+                sub = 'Submitted';
+
+                output +=
+                    '<div id="assignmentList"></div>\n' +
+                    '<span id="assignmentList"></span>\n' +
+                    '<tr>\n' +
+                    '<td>' + data[i].sno + '</td>\n' +
+                    '<td>' + data[i].title + '</td>\n' +
+                    '<td>' + data[i].date + '</td>\n' +
+                    '<td>' + data[i].dueDate + '</td>\n' +
+                    '<td class="table-success">' + sub + '</td>\n' +
+                    '<td style="text-align: center;height: 30px;">\n' +
+                    '<button class="btn btn-primary text-end" type="button" style="background: var(&#45;&#45;bs-table-bg);border-color: var(&#45;&#45;bs-table-bg);color: var(&#45;&#45;bs-table-bg);padding: 0px;">\n' +
+                    '<i class="fa fa-upload" style="height: 7px;width: 21.9px;background: var(&#45;&#45;bs-table-bg);text-align: center;color: var(&#45;&#45;bs-table-striped-color);"></i>\n' +
+                    '</button>\n' +
+                    '</td>\n' +
+                    '</tr>'
+            }
+            else {
+                output +=
+                    '<div id="assignmentList"></div>\n' +
+                    '<span id="assignmentList"></span>\n' +
+                    '<tr>\n' +
+                    '<td>' + data[i].sno + '</td>\n' +
+                    '<td>' + data[i].title + '</td>\n' +
+                    '<td>' + data[i].date + '</td>\n' +
+                    '<td>' + data[i].dueDate + '</td>\n' +
+                    '<td class="table-danger">' + sub + '</td>\n' +
+                    '<td style="text-align: center;height: 30px;">\n' +
+                    '<button class="btn btn-primary text-end" type="button" style="background: var(&#45;&#45;bs-table-bg);border-color: var(&#45;&#45;bs-table-bg);color: var(&#45;&#45;bs-table-bg);padding: 0px;">\n' +
+                    '<i class="fa fa-upload" style="height: 7px;width: 21.9px;background: var(&#45;&#45;bs-table-bg);text-align: center;color: var(&#45;&#45;bs-table-striped-color);"></i>\n' +
+                    '</button>\n' +
+                    '</td>\n' +
+                    '</tr>'
+            }
+
+        }
+
+        document.getElementById('assignmentList').innerHTML = output;
+    }
+
+    request.send();
+}
