@@ -15,22 +15,23 @@ public class Announcement implements Serializable
     @Column(nullable = false, updatable = false)
     private long id;
     private String nameOfProfessor;
+//    @Column(length = 10000000, columnDefinition = "TEXT")
+//    @Column(length = 100000000)
+    @Lob @Column(length = 100000)
     private String announcement;
+    
     private LocalDate date;
     private LocalTime time;
     
     public Announcement(String nameOfProfessor, String announcement, LocalDate date, LocalTime time)
     {
-//        this.id = id;
         this.nameOfProfessor = nameOfProfessor;
         this.announcement = announcement;
         this.date = date;
         this.time = time;
     }
     
-    public Announcement()
-    {
-    
+    public Announcement() {
     }
     
     public long getId()

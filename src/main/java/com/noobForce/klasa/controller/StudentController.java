@@ -32,6 +32,7 @@ public class StudentController
     @PostMapping("/add")
     public ResponseEntity<Student> addStudent(@RequestBody Student student)
     {
+        System.out.println("requested");
         return new ResponseEntity<>(studentService.addStudent(student), HttpStatus.CREATED);
     }
     

@@ -23,6 +23,10 @@ public class Assignment implements Serializable {
 	private LocalDate dueDate;
 	private boolean status;
 	private String title;
+	
+	public Assignment()
+	{}
+	
 	public long getId() {
 		return id;
 	}

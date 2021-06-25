@@ -29,12 +29,13 @@ public class AssignmentService
     
     public List<Assignment> getAllAssignments()
     {
+        System.out.println("asses created");
     	deleteAssignment();
     	String[] Title = new String[15];
         LocalDate[] AssignedOn = new LocalDate[15];
         LocalDate[] DueOn = new LocalDate[15];
         int[] SNo = new int[15];
-    	Boolean[] Status = new Boolean[2];
+    	Boolean[] Status = new Boolean[15];
        
         Title[1] = "Assignment-1";
         Title[2] = "Lab-Assignment-5";
@@ -66,8 +67,7 @@ public class AssignmentService
         
         for (int i = 0; i < 15; i++)
         {
-        	SNo[i]= 1;
-        	
+        	SNo[i]= i + 1;
         }
         
         for (int i = 0; i < 15; i++)
@@ -88,9 +88,10 @@ public class AssignmentService
         return assignmentRepository.findAll();
     }
     
-    public List<Assignment> getAllAssignmentsByDate(int date, int dueDate)
+    public List<Assignment> getAllAssignmentsByDate(int dueDate)
     {
-        return assignmentRepository.findByDateAndDueDate(LocalDate.of(2021, 06, date),LocalDate.of(2021, 06, dueDate));
+        getAllAssignments();
+        return assignmentRepository.findByDueDate(LocalDate.of(2021, 06, dueDate));
     }
     public void deleteAssignment() {
         assignmentRepository.deleteAll();

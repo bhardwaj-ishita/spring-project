@@ -79,12 +79,13 @@ public class Resource implements Serializable {
 				+ ", date=" + date + ", time=" + time + "]";
 	}
 
-	public Resource(int sNo, String nameOfProfessor, String resource, LocalDate date) {
+	public Resource(int sNo, String nameOfProfessor, String resource, LocalDate date, LocalTime time) {
 		super();
 		SNo = sNo;
 		this.nameOfProfessor = nameOfProfessor;
 		this.resource = resource;
 		this.date = date;
+		this.time = time;
 		
 	}
 

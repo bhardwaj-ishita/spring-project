@@ -10,11 +10,6 @@ import com.noobForce.klasa.model.Assignment;
 public interface AssignmentRepository extends JpaRepository<Assignment, Long>
 {
 
-	List<Assignment> findByDateAndDueDate(LocalDate of, LocalDate of2);
-
-
-
-	
-
-	
+//	List<Assignment> findByDateAndDueDate(LocalDate of, LocalDate of2);
+    List<Assignment> findByDueDate(LocalDate of);
 }

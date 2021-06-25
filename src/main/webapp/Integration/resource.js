@@ -1,19 +1,21 @@
 function loadResource() {
+    console.log("function runs")
     let request = new XMLHttpRequest();
     request.open('GET', '/resource/getAll', false);
 
-    request.onload = function (){
+    request.onload = function () {
+        console.log("STATUS");
+        console.log(this.status);
         let data = JSON.parse(this.responseText);
         let output = '';
-        for (const i in data){
-            output += '<tr><td>'+ data[i].SNo + '</td><td>' + data[i].nameOfProfessor +'</td><td>' + data[i].resource +'</td><td><a href="#">' + data[i].date + '</a></td></tr>'
+        for (const i in data) {
+            console.log(data[i]);
+            output += '<tr><td>' + data[i].sno + '</td><td>' + data[i].resource + '</td><td>' + data[i].date + '</td><td><a href=' + data[i].nameOfProfessor + '>' + data[i].nameOfProfessor + '</a></td></tr>'
 
         }
         document.getElementById('resourceList').innerHTML = output;
     }
-
     request.send();
-
 }
 
 loadResource();

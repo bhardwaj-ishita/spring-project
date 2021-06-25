@@ -32,6 +32,7 @@ public class ResourceService
 
       public List<Resource> getAllResourcesByDate(int date)
     {
+        getAllResources();
         return resourceRepository.findByDate(LocalDate.of(2021, 06, date));
     }
     
@@ -42,16 +43,25 @@ public class ResourceService
     public List<Resource> getAllResources()
     {
         deleteResource();
+        System.out.println("getallresources called");
+        deleteResource();
         String[] link = new String[3];
         String[] resource = new String[15];
         LocalDate[] dates = new LocalDate[15];
+        LocalTime[] times = new LocalTime[15];
         int[] SNo = new int[15];
+        
+        Random r = new Random();
+        
+        for (int i = 0; i < 15; i++)
+        {
+            times[i] = LocalTime.of(Math.abs(r.nextInt() % 24), Math.abs(r.nextInt() % 60));
+        }
         
 
         for (int i = 0; i < 15; i++)
         {
-        	SNo[i]= 1;
-        	
+        	SNo[i]= i + 1;
         }
         
         for (int i = 0; i < 15; i++)
@@ -83,8 +93,9 @@ public class ResourceService
         
         for(int i =0; i<15; i++) 
         {
-        	Resource Re = new Resource(SNo[i], link[i], resource[i], dates[i]);
+        	Resource Re = new Resource(SNo[i], link[i % 3], resource[i], dates[i], times[i]);
         	addResource(Re);
+            System.out.println(Re);
         }
         
 
