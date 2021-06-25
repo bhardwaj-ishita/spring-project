@@ -125,8 +125,8 @@
                                         <article>
                                             <div class="row" id="message-to-send">
                                                 <div class="col">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item" style="margin: 5px 5px 0px 5px;">
+                                                    <ul class="list-group" id="list-discussion">
+                                                        <!--<li class="list-group-item" style="margin: 5px 5px 0px 5px;">
                                                             <div class="d-flex media">
                                                                 <div></div>
                                                                 <div class="media-body">
@@ -144,8 +144,8 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </li>
-                                                        <li class="list-group-item" style="margin: 0px 5px;border-style: solid;"><label class="form-label">Ishita</label>
+                                                        </li>-->
+                                                        <li class="list-group-item" style="margin: 0px 5px;border-style: solid;" id="the-messages"><a><label class="form-label"></label>
                                                             <div class="d-flex media">
                                                                 <div></div>
                                                                 <div class="media-body">
@@ -154,36 +154,27 @@
                                                                         <div style="overflow:visible;" class="media-body">
                                                                             <div class="row">
                                                                                 <div class="col-md-12">
-                                                                                    <p>When will we have our practical exams?<br>
-                                                                                        <small class="text-muted">21/06/21 at 4:00pm</small></p>
+                                                                                    <p><br>
+                                                                                        <small class="text-muted"></small></p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </li>
+                                                        </a></li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <!--<div class="row">
-                                                <div class="col" style="margin: 5px;">
-                                                    <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
-                                                </div>
-                                            </div>-->
                                         </article>
-                                        <div class="row">
-                                                <div class="col" style="margin: 5px;">
-                                                    <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
-                                                </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col" style="margin: 5px;">
+                                            <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
                                         </div>
                                     </div>
                                 </section>
-                                <!--<div class="row">
-                                    <div class="col" style="margin: 5px;">
-                                        <div class="input-group"><input class="form-control" type="text" placeholder="Enter a message to send" id="send-message"><button class="btn btn-primary" type="button" id="sendInput">Send</button></div>
-                                    </div>-->
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -207,5 +198,4 @@
 <script src="Integration/discussions.js"></script>
 
 </body>
-
 </html>
