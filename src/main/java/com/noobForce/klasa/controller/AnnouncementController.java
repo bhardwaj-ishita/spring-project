@@ -30,7 +30,7 @@ public class AnnouncementController
         
     }
     
-    @GetMapping("/getAll")
+    @GetMapping("/getAllAnnounce")
     public ResponseEntity<List<Announcement>> getAllAnnouncements()
     {
         return new ResponseEntity<>(announcementService.getAllAnnouncements(), HttpStatus.OK);
