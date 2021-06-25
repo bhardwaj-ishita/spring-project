@@ -22,10 +22,15 @@ public class DiscussionController {
 
     private static final Logger log = LoggerFactory.getLogger(DiscussionController.class);
 
-    @GetMapping("/getAll")
-    public List<Discussion> showDiscussion(String keyword) {
-        if(keyword == null) return discussionService.getAllDiscussion();
-        else return discussionService.getByKeyword(keyword);
+    @GetMapping("/getAll/")
+    public List<Discussion> showDiscussion() {
+        return discussionService.getAllDiscussion();
+    }
+
+    @GetMapping("/getAll/{keyword}")
+    public List<Discussion> getFilteredDiscussion(@PathVariable String keyword) {
+            return discussionService.getByKeyword(keyword);
+
     }
 
     @GetMapping("/getAllByDate/{date}")
