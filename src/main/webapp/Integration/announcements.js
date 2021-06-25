@@ -10,7 +10,7 @@ function loadAllAnnouncments() {
             let output = '';
             for (const i in data) {
                 console.log(data[i]);
-                output += '<li class="list-group-item"><div class="d-flex media"><div class="media-body"> <div class="d-flex media" style="overflow:visible;"><div></div><div style="overflow:visible;" class="media-body"><div class="row" style="width: 797px;"><div class="col-10"><h5></h5><p>';
+                output += '<li class="list-group-item"><div class="d-flex media"><div class="media-body"> <div class="d-flex media" style="overflow:visible;"><div></div><div style="overflow:visible;" class="media-body"><div class="row"><div class="col-md-12"><h5></h5><p>';
                 output += data[i].announcement;
                 output += '<br><br><small class="text-muted">';
                 output += data[i].date;
