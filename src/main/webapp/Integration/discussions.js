@@ -105,7 +105,7 @@ function addNewMessage() {
 }
 
 
- //SEARCH FILTER
+//SEARCH FILTER
 document.getElementById('search-field').addEventListener('keyup', searchList);
 function searchList() {
     let xrh = new XMLHttpRequest();
