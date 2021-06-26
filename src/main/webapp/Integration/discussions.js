@@ -87,6 +87,7 @@ function loadMessages() {
     });
 }
 
+loadMessages();
 
 //POSTING NEW MESSAGES TO DB
 document.getElementById('sendInput').addEventListener('click', addNewMessage);
