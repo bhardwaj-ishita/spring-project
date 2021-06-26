@@ -26,7 +26,7 @@ function loadMessages() {
     getLoggedInStudent().then(nameOfSender => {
         var xrh = new XMLHttpRequest();
         let search = document.getElementById("search-field");
-        xrh.open('GET', '/discussions/getAll', false);
+        xrh.open('GET', '/discussions/getAll', true);
         xrh.onload = function () {
             if (this.status === 200) {
                 const members = JSON.parse(this.responseText);
@@ -93,7 +93,7 @@ document.getElementById('sendInput').addEventListener('click', addNewMessage);
 function addNewMessage() {
     let input = document.getElementById('send-message').value;
     let xrh = new XMLHttpRequest();
-    xrh.open('POST', '/discussions/addMessage', false);
+    xrh.open('POST', '/discussions/addMessage', true);
     xrh.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     let params = JSON.stringify({
         "input": input
@@ -111,7 +111,7 @@ function searchList() {
     let xrh = new XMLHttpRequest();
     let search = document.getElementById("search-field").value;
     console.log(search);
-    xrh.open('GET', '/discussions/getAll/' + search, false);
+    xrh.open('GET', '/discussions/getAll/' + search, true);
     getLoggedInStudent().then(nameOfSender => {
         xrh.onload = function () {
             if (this.status === 200) {
