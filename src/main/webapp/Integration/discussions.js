@@ -2,7 +2,7 @@
 function getLoggedInStudent(){
     return new Promise( function (resolve, reject) {
         var xrh = new XMLHttpRequest();
-        xrh.open('GET', '/student/getAllStudents', true);
+        xrh.open('GET', '/student/getAllStudents', false);
         xrh.onload = function () {
             let output= '';
             if (this.status === 200) {
@@ -26,7 +26,7 @@ function loadMessages() {
     getLoggedInStudent().then(nameOfSender => {
         var xrh = new XMLHttpRequest();
         let search = document.getElementById("search-field");
-        xrh.open('GET', '/discussions/getAll', true);
+        xrh.open('GET', '/discussions/getAll', false);
         xrh.onload = function () {
             if (this.status === 200) {
                 const members = JSON.parse(this.responseText);
@@ -111,7 +111,7 @@ function searchList() {
     let xrh = new XMLHttpRequest();
     let search = document.getElementById("search-field").value;
     console.log(search);
-    xrh.open('GET', '/discussions/getAll/' + search, true);
+    xrh.open('GET', '/discussions/getAll/' + search, false);
     getLoggedInStudent().then(nameOfSender => {
         xrh.onload = function () {
             if (this.status === 200) {
