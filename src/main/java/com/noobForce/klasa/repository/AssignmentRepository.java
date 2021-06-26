@@ -17,6 +17,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Long>
     List<Assignment> findByDueDate(LocalDate of);
 
     //for search feature
-    @Query(value = "select * from Assignment a where a.title like %:keyword% or a.date like %:keyword% or a.due_date like %:keyword% or a.status like %:keyword%", nativeQuery = true)
+    @Query(value = "select * from Assignment a where a.title like %:keyword%", nativeQuery = true)
     List<Assignment> findByKeyword(@Param("keyword") String keyword);
 }

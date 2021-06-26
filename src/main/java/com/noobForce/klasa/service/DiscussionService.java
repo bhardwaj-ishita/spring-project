@@ -32,4 +32,8 @@ public class DiscussionService {
     public Discussion addDiscussion(Discussion discussion) {
         return discussionRepository.save(discussion);
     }
+
+    public void deleteDiscussion() {
+        discussionRepository.deleteAll();
+    }
 }
