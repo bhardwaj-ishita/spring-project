@@ -197,4 +197,5 @@ function loadDataOnTop(date) {
 }
 
 setCalendarOnclicks();
-loadDataOnTop(15);
+let date_today = new Date();
+loadDataOnTop(date_today.getDate());
