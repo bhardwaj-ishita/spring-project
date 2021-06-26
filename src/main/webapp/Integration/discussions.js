@@ -26,7 +26,7 @@ function loadMessages() {
     getLoggedInStudent().then(nameOfSender => {
         var xrh = new XMLHttpRequest();
         let search = document.getElementById("search-field");
-        xrh.open('GET', '/discussions/getAll/', true);
+        xrh.open('GET', '/discussions/getAll', true);
         xrh.onload = function () {
             if (this.status === 200) {
                 const members = JSON.parse(this.responseText);
