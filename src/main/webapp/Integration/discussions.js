@@ -2,7 +2,7 @@
 function getLoggedInStudent(){
     return new Promise( function (resolve, reject) {
         var xrh = new XMLHttpRequest();
-        xrh.open('GET', '/student/getAllStudents', false);
+        xrh.open('GET', '/student/getAllStudents', true);
         xrh.onload = function () {
             let output= '';
             if (this.status === 200) {
