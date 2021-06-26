@@ -16,7 +16,7 @@ import java.util.List;
 @Repository
 public interface DiscussionRepository extends JpaRepository<Discussion,Long> {
 
-    @Query(value = "select * from Discussion d where d.input like %:keyword% or d.date like %:keyword% ", nativeQuery = true)
+    @Query(value = "select * from Discussion d where d.input like %:keyword%", nativeQuery = true)
     List<Discussion> findByKeyword(@Param("keyword") String keyword);
 
     List<Discussion> findByDate(LocalDate localDate);
